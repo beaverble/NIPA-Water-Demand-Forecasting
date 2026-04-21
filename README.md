@@ -47,9 +47,10 @@
 ## 3. 설치 및 요구 사항
 
 #### 3-1.  **필수 라이브러리 설치**:
-    ```
-    pip install -r requirements.txt
-    ```
+
+```
+  pip install -r requirements.txt
+```
 
 #### 3-2.  **시스템 환경**:
     - 본 시스템은 NVIDIA GPU 가속을 사용하도록 최적화되어 있습니다.
