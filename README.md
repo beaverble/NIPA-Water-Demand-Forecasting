@@ -4,7 +4,9 @@
 
 대전 지역의 상수도 데이터를 실시간으로 수집하고, 딥러닝 모델(LSTM)을 활용하여 미래 수요 예측 및 과다 사용 알림을 제공하는 통합 관리 시스템입니다.
 
-<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/edf26476-09cf-4820-bc35-a5fcf1aa2f4f" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/edf26476-09cf-4820-bc35-a5fcf1aa2f4f" width="800" height="400" />
+</p>
 
 
 ## 주요 기능
@@ -47,7 +49,7 @@
 python main.py
 ```
 
-## ⚙️ 시스템 설정 가이드
+## 시스템 설정 가이드
 
 * **인증 토큰**: API 호출 시 `X-Auth-token` 헤더가 사용됩니다. 각 스크립트 내의 토큰 정보가 유효한지 확인하십시오.
 * **데이터 필터링**: 검침 데이터 중 결측치(NaN)가 많거나 데이터 개수가 부족한 가구는 예측 신뢰도를 위해 대상에서 자동으로 제외됩니다.
