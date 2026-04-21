@@ -30,28 +30,19 @@
 | `rest_api_short.py` / `long.py` | 예측에 필요한 실시간 데이터를 API로부터 호출 및 전처리 |
 | `retrain_api.py` | 재학습용 과거 대량 데이터를 수집하여 CSV로 저장 |
 
-실행 흐름도
-시스템은 크게 예측 파이프라인과 재학습 파이프라인으로 나뉩니다.
+#### [예측 파이프라인 (Daily)]
+매일 정해진 시간에 실시간 데이터를 바탕으로 예측을 수행합니다.
+* 스케줄러 가동: main.py 실행 시 설정된 시간에 맞춰 작업이 시작됩니다.
+* 데이터 수집: rest_api_short.py 및 rest_api_long.py가 외부 API에서 실시간 검침 데이터를 수집합니다.
+* 예측 결과 생성: predict_usage_short.py 및 predict_usage_long.py가 수집된 데이터를 바탕으로 수요 예측 결과를 생성합니다.
+* 패턴 분석 및 요금 예측: predict_excessive.py가 전월 대비 사용 패턴을 분석하고 누진세를 고려한 요금 예측을 수행합니다.
+* 결과 전송: 최종 예측 결과를 시스템 로그 및 API를 통해 결과 서버로 전송합니다.
 
-[예측 파이프라인 (Daily)]
-
-main.py 실행 시 스케줄러 가동
-
-**rest_api_short/long.py**가 외부 API에서 실시간 검침 데이터를 수집
-
-**predict_usage_short/long.py**가 수집된 데이터를 바탕으로 결과 생성
-
-**predict_excessive.py**가 전월 대비 사용 패턴 분석 및 요금 예측 수행
-
-최종 결과를 시스템 로그 및 API를 통해 결과 서버로 전송
-
-[재학습 파이프라인 (Periodic)]
-
-**retrain_api.py**를 통해 대규모 학습용 데이터셋 구성
-
-predict_usage_short/long_retrain.py 실행
-
-TensorFlow를 이용한 모델 최적화 및 .h5 모델 파일 갱신
+#### [재학습 파이프라인 (Periodic)]
+주기적으로 최신 데이터를 반영하여 모델의 성능을 유지합니다.
+* 데이터셋 구성: retrain_api.py를 통해 모델 학습에 필요한 대규모 과거 데이터셋을 구축합니다.
+* 학습 실행: predict_usage_short_retrain.py 및 predict_usage_long_retrain.py를 실행합니다.
+* 모델 갱신: TensorFlow를 이용하여 모델을 최적화한 후 .h5 모델 파일을 최신 상태로 업데이트합니다.
 
 ## 설치 및 요구 사항
 
