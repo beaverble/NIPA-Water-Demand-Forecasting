@@ -30,6 +30,29 @@
 | `rest_api_short.py` / `long.py` | 예측에 필요한 실시간 데이터를 API로부터 호출 및 전처리 |
 | `retrain_api.py` | 재학습용 과거 대량 데이터를 수집하여 CSV로 저장 |
 
+실행 흐름도
+시스템은 크게 예측 파이프라인과 재학습 파이프라인으로 나뉩니다.
+
+[예측 파이프라인 (Daily)]
+
+main.py 실행 시 스케줄러 가동
+
+**rest_api_short/long.py**가 외부 API에서 실시간 검침 데이터를 수집
+
+**predict_usage_short/long.py**가 수집된 데이터를 바탕으로 결과 생성
+
+**predict_excessive.py**가 전월 대비 사용 패턴 분석 및 요금 예측 수행
+
+최종 결과를 시스템 로그 및 API를 통해 결과 서버로 전송
+
+[재학습 파이프라인 (Periodic)]
+
+**retrain_api.py**를 통해 대규모 학습용 데이터셋 구성
+
+predict_usage_short/long_retrain.py 실행
+
+TensorFlow를 이용한 모델 최적화 및 .h5 모델 파일 갱신
+
 ## 설치 및 요구 사항
 
 1.  **필수 라이브러리 설치**:
