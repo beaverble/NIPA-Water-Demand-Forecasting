@@ -46,12 +46,12 @@
 
 ## 3. 설치 및 요구 사항
 
-3-1.  **필수 라이브러리 설치**:
+#### 3-1.  **필수 라이브러리 설치**:
     ```bash
     pip install tensorflow pandas numpy scikit-learn requests schedule python-dateutil
     ```
 
-3-2.  **시스템 환경**:
+####3-2.  **시스템 환경**:
     - 본 시스템은 NVIDIA GPU 가속을 사용하도록 최적화되어 있습니다.
     - `tensorflow`가 GPU를 인식할 수 있는 CUDA/cuDNN 환경을 권장합니다.
 
