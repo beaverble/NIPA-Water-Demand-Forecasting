@@ -4,7 +4,7 @@
 
 대전 지역의 상수도 데이터를 실시간으로 수집하고, 딥러닝 모델(LSTM)을 활용하여 미래 수요 예측 및 과다 사용 알림을 제공하는 통합 관리 시스템입니다.
 
-<img width="1369" height="648" alt="image" src="https://github.com/user-attachments/assets/5347d409-4913-4c3c-9e01-8f1f781602b7" />
+<img width="1143" height="537" alt="image" src="https://github.com/user-attachments/assets/edf26476-09cf-4820-bc35-a5fcf1aa2f4f" />
 
 
 ## 주요 기능
