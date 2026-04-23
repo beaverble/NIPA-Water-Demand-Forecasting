@@ -74,7 +74,7 @@ def json_read(req0,req1,from_date,middle_end,middle_start,to_date):
         print("request except!")
         time.sleep(60)
         headers = {
-            'X-Auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJ0ZXN0MDAwMSIsImlhdCI6MTYzNzI5MDAyNX0.FA64aZW42ZFn8weId6yoSXwQn4Zed1ji4hAUZ6oNZ8w',
+            'X-Auth-token': '',
         }
         usage_date0 = {"from": from_date, "to": middle_end}
         usage_date1 = {"from": middle_start, "to": to_date}
@@ -111,7 +111,7 @@ def main():
     from_date,middle_end,middle_start, to_date = change_date(now_date)
 
     headers = {
-        'X-Auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJ0ZXN0MDAwMSIsImlhdCI6MTYzNzI5MDAyNX0.FA64aZW42ZFn8weId6yoSXwQn4Zed1ji4hAUZ6oNZ8w',
+        'X-Auth-token': '',
     }
     usage_date0 = {"from": from_date, "to": middle_end}
     usage_date1 = {"from": middle_start, "to": to_date}
@@ -172,7 +172,7 @@ def main():
         predict_data["cusnum"] = cusnum[i]
         predict_data["result"] = result[i]
         headers = {
-            'X-Auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJ0ZXN0MDAwMSIsImlhdCI6MTYzNzI5MDAyNX0.FA64aZW42ZFn8weId6yoSXwQn4Zed1ji4hAUZ6oNZ8w',
+            'X-Auth-token': '',
         }
         request0 = requests.post("http://211.238.12.61:3100/api/prediction/excessive_usage/result", headers=headers, json=predict_data)
         print("excessive model prediction finish")
