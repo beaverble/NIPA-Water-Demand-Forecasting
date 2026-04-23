@@ -97,7 +97,7 @@ def add_log():
     log_data["log_message"] = "long prediction test"
 
     headers = {
-        'X-Auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJ0ZXN0MDAwMSIsImlhdCI6MTYzNzI5MDAyNX0.FA64aZW42ZFn8weId6yoSXwQn4Zed1ji4hAUZ6oNZ8w',
+        'X-Auth-token': '',
     }
     request0 = requests.post("http://211.238.12.61:3100/api/models/log", headers=headers, json=log_data)
 
@@ -145,7 +145,7 @@ def main(data):
         predict_data["result"] = result[i]
         predict_data = [predict_data]
         headers = {
-            'X-Auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJ0ZXN0MDAwMSIsImlhdCI6MTYzNzI5MDAyNX0.FA64aZW42ZFn8weId6yoSXwQn4Zed1ji4hAUZ6oNZ8w',
+            'X-Auth-token': '',
         }
         #request0 = requests.post("http://211.238.12.61:3100/api/prediction/usage/result", headers=headers, json=predict_data)
 
