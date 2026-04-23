@@ -97,7 +97,7 @@ def main():
     print("단기 예측을 위해",from_date,"부터",to_date,"까지 사용")
 
     headers = {
-        'X-Auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJ0ZXN0MDAwMSIsImlhdCI6MTYzNzI5MDAyNX0.FA64aZW42ZFn8weId6yoSXwQn4Zed1ji4hAUZ6oNZ8w',
+        'X-Auth-token': '',
     }
     usage_date = {"from": from_date, "to": to_date}
     req0 = requests.post("http://211.238.12.61:3100/api/waterflows/r-meterdata/historyAll", headers=headers, data=usage_date)
